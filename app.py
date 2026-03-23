@@ -97,12 +97,12 @@ def load_resources():
     df['titulo_norm'] = df['Título'].apply(normalizar_texto)
     df['autor_norm'] = df['Autor'].apply(normalizar_texto)
     
-    with open(f"{PATH_RECO}/metadatos_promptss_infloat_ponderado_genero.pkl", "rb") as f:
+    with open(f"{PATH_RECO}metadatos_promptss_infloat_ponderado_small.pkll", "rb") as f:
         df_ia_meta = pickle.load(f)
     df_ia_meta['Nº lote'] = df_ia_meta['Nº lote'].astype(str).str.strip()
     
-    index = faiss.read_index(f"{PATH_RECO}/biblioteca_prompts_infloat_ponderado_genero.index")
-    model = SentenceTransformer('intfloat/multilingual-e5-large')
+    index = faiss.read_index(f"{PATH_RECO}/biblioteca_prompts_infloat_ponderado_small.index")
+    model = SentenceTransformer('intfloat/multilingual-e5-small')
     
     gc.collect() 
     return df, df_ia_meta, index, model

@@ -22,21 +22,7 @@ if "idioma" not in st.session_state:
 if "auth" not in st.session_state:
     st.session_state.auth = False
 
-# --- LOGIN SIMPLE CON SECRETO ---
-PASSWORD = os.environ.get("PASSWORD") 
 
-if "auth" not in st.session_state:
-    st.session_state.auth = False
-
-if not st.session_state.auth:
-    st.title("🔒 Acceso restringido")
-    pwd = st.text_input("Introduce la contraseña", type="password")
-    if pwd == PASSWORD:
-        st.session_state.auth = True
-        st.rerun()
-    elif pwd:
-        st.error("Contraseña incorrecta")
-    st.stop()
 
 
 # --- 1. CONFIGURACIÓN E IDIOMAS ---

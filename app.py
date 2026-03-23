@@ -97,7 +97,7 @@ def load_resources():
     df['titulo_norm'] = df['Título'].apply(normalizar_texto)
     df['autor_norm'] = df['Autor'].apply(normalizar_texto)
     
-    with open(f"{PATH_RECO}metadatos_promptss_infloat_ponderado_small.pkll", "rb") as f:
+    with open(f"{PATH_RECO}metadatos_promptss_infloat_ponderado_small.pkl", "rb") as f:
         df_ia_meta = pickle.load(f)
     df_ia_meta['Nº lote'] = df_ia_meta['Nº lote'].astype(str).str.strip()
     

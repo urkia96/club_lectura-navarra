@@ -102,7 +102,7 @@ def load_resources():
     df_ia_meta['Nº lote'] = df_ia_meta['Nº lote'].astype(str).str.strip()
     
     index = faiss.read_index(f"{PATH_RECO}/biblioteca_prompts_infloat_ponderado_small.index")
-    model = SentenceTransformer('intfloat/multilingual-e5-large')
+    model = SentenceTransformer('intfloat/multilingual-e5-small')
     
     gc.collect() 
     return df, df_ia_meta, index, model
